@@ -14,7 +14,7 @@
   <h2><strong>Weather Conditions</strong></h2>
   <p>Type the name of the town where you want to check the weather conditions.</p>
 
-  <form [formGroup] ="weatherForm" (ngSubmit)="search(weatherForm.value)">
+  <form [formGroup] ="weatherForm" (ngSubmit)="search(weatherForm.value)" >
     <ion-input placeholder="Enter Town Name, Ex. Pretoria" formControlName="city"></ion-input>
 
     <button class="checkWeather" type="submit" [disabled]="!weatherForm.valid">Search</button>
