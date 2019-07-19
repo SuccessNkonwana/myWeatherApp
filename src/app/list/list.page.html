@@ -1,0 +1,77 @@
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+     Conditions
+    </ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content class="main">
+  <div class="details" style=" background-image: url(assets/bg.gif);">
+  <h2><strong>Weather Conditions</strong></h2>
+  <p>Type the name of the town where you want to check the weather conditions.</p>
+
+  <form [formGroup] ="weatherForm" (ngSubmit)="search(weatherForm.value)">
+    <ion-input placeholder="Enter Town Name, Ex. Pretoria" formControlName="city"></ion-input>
+
+    <button class="checkWeather" type="submit" [disabled]="!weatherForm.valid">Search</button>
+  </form>
+  <div class="weather" *ngIf="weather">
+      <div>   
+        <p>{{weather.city.name}}, &nbsp; {{weather.city.country}}</p>  
+          <img src="http://openweathermap.org/img/w/{{weather.list[0].weather[0].icon}}.png">
+         
+          <p class="big"> {{weather.list[0].main.temp -271.15 | number :'2.0-0'}}° </p>
+            <!-- <p><strong> Min: {{weather.list[1].main.temp_min -271.15 | number :'2.0-0'}}° &nbsp; &nbsp;
+                       Max: {{weather.list[1].main.temp_max -271.15 | number :'2.0-0'}}°</strong></p> -->
+            <p><strong>{{weather.list[0].weather[0].description}}</strong></p>  
+          
+          <p>{{weather.list[0].dt_txt | date:'EEEE'}}</p>
+
+      </div>
+      
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            
+            <p>{{weather.list[8].dt_txt | date:'EEE'}}</p>
+            <img src="http://openweathermap.org/img/w/{{weather.list[8].weather[0].icon}}.png">
+              <p>
+               <strong> {{weather.list[8].main.temp -271.15 | number :'2.0-0'}}°</strong> 
+               &nbsp;{{weather.list[8].weather[0].description}}
+             </p>  
+            
+          </ion-col>
+          <ion-col size="3">
+              <p>{{weather.list[16].dt_txt | date:'EEE'}}</p>
+              <img src="http://openweathermap.org/img/w/{{weather.list[16].weather[0].icon}}.png">
+              <p>
+               <strong> {{weather.list[16].main.temp -271.15 | number :'2.0-0'}}°</strong> 
+               &nbsp;{{weather.list[16].weather[0].description}}
+             </p>  
+          </ion-col>
+          <ion-col size="3">
+              <p>{{weather.list[24].dt_txt | date:'EEE'}}</p>
+              <img src="http://openweathermap.org/img/w/{{weather.list[16].weather[0].icon}}.png">
+              <p>
+               <strong> {{weather.list[24].main.temp -271.15 | number :'2.0-0'}}°</strong> 
+               &nbsp;{{weather.list[24].weather[0].description}}
+             </p>  
+          </ion-col>
+          <ion-col size="3">
+              <p>{{weather.list[32].dt_txt | date:'EEE'}}</p>
+              <img src="http://openweathermap.org/img/w/{{weather.list[16].weather[0].icon}}.png">
+              <p>
+               <strong> {{weather.list[32].main.temp -271.15 | number :'2.0-0'}}°</strong> 
+               &nbsp;{{weather.list[32].weather[0].description}}
+             </p>  
+          </ion-col>
+        </ion-row>
+</ion-grid>       
+  </div>
+</div>
+
+</ion-content>
