@@ -9,13 +9,13 @@
   </ion-toolbar>
 </ion-header> -->
 
-<ion-content class="main">
-  <div class="details" style=" background-image: url(assets/bg.gif);">
-  <h2><strong>Weather Conditions</strong></h2>
-  <p>Type the name of the town where you want to check the weather conditions.</p>
+<ion-content class="ion-padding">
+  <!-- <div class="details" style=" background-image: url(assets/bg.gif);"> -->
+  
+ 
 
   <form [formGroup] ="weatherForm" (ngSubmit)="search(weatherForm.value)" >
-    <ion-input placeholder="Enter Town Name, Ex. Pretoria" formControlName="city"></ion-input>
+    <ion-input  formControlName="city" ></ion-input>
 
     <button class="checkWeather" type="submit" [disabled]="!weatherForm.valid">Search</button>
   </form>
@@ -72,6 +72,6 @@
         </ion-row>
 </ion-grid>       
   </div>
-</div>
+<!-- </div> -->
 
 </ion-content>

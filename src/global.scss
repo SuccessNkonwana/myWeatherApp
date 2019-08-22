@@ -14,7 +14,7 @@ $custom-color: #7bcdfd;
 
 
 * {
-    color: rgb(255, 235, 235);
+    color: #fff;
 }
 
 
@@ -133,9 +133,9 @@ button:disabled {
     }
 
 
-    .main > div.intro, .main > div.details {
-        width: 90%;
-        //  --background: #fff url('assets/bg.gif') no-repeat center center / cover;
+    .ion-padding {
+        width: 100%;
+         --background: #fff url('assets/bg.gif') no-repeat center center / cover;
         //    background-image: url(assets/bg.png);
           display: flex;
           flex-flow: row wrap;
